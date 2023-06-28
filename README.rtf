@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 DESCRIPTION: Statistical programming code for Stata to implement analyses from Disparities in Guideline-Recommended Statin Use for Prevention of Atherosclerotic Cardiovascular Disease by Race, Ethnicity, and Gender: A Nationally Representative Cross-Sectional Analysis of Adults in the United States. Frank DA, Johnson AE, Hausmann LRM , Gellad WF, Roberts ET, and Vajravelu RK. Ann Intern Med. Jul 25 2023. https://doi.org/10.7326/M23-0720. \
+\
+\
+\
+FOLDER STRUCTURE: Change folder local macro in \'93DIRECTORIES\'94 section of each file to your desired directory. Create subfolder titled \'93Data processing\'94 within your directory. Create subfolders titled \'93lookup\'94, \'93temp\'94, and \'93tables\'94 within \'93Data processing\'94. Save files \'93ascvd icd10 code list.dta\'94, \'93htn icd10 code list.dta\'94, and \'93type 2 diabetes icd10 code list.dta\'94 in \'93lookup\'94.\
+\
+\
+DATA EXTRACTION: Extract required data from NHANES cycles 2015-2016, 2017-2018, and 2017-2020 and organize them in a single file called \'93statinDisparities_nhanes_extractedData_2015To2020.dta\'94\
+\
+DATA PROCESSING: Processes \'93statinDisparities_nhanes_extractedData_2015To2020.dta\'94 into an analytic dataset. Saves analytic data set as \'93statinDisparities_nhanes_analyticDataset.dta\'94\
+	* Variables:\
+		- analysis_type (STRING): \'93main\'94 to use 2015-2016 and 2017-2020 NHANES cycles versus \'93sensi\'94 to use 2015-2016 and 2017-2018 NHANES cycles.\
+\
+DATA ANALYSIS: Analyze \'93statinDisparities_nhanes_analyticDataset.dta\'94 to generate study results described in paper. Calculates descriptive statistics, Table 1 (Participant characteristics), and Table 2 (Unadjusted stain use). Multiply imputes missing data. Adjusted odds ratios for Models 1, 2, and 3 saved in \'93tables\'94 subfolder as \'93.csv\'94 files. Adjusted prevalence ratios for race-ethnicty-gender groups for Models 1, 2, and 3 saved in \'93tables\'94 subfolder as \'93.dta\'94 files. Adjusted prevalence ratios for covariates for Models 1, 2, and 3 calculated only for main analyses and display in Stata window. Saves the multiply imputed analytic dataset as "statinDisparities_nhanes_analyticDataset_mi.dta\'94\
+	* Dependency: mimrgns package\
+}
